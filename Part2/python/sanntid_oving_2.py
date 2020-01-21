@@ -13,18 +13,21 @@ i = 0
 def incrementingFunction():
     global i
     # TODO: increment i 1_000_000 times
-    lock.acquire()
     for j in range(1000000):
+        lock.acquire()
         i = i + 1
-    lock.release()
+        #if j % 1000 == 0:
+        #    print("Nebbdyret")
+        lock.release()
 def decrementingFunction():
     global i
     # TODO: decrement i 1_000_000 times
-    lock.acquire()
     for j in range(1000000):
-	    i = i - 1
-    lock.release()
-
+        lock.acquire()
+        i = i - 1
+        #if j % 1000 == 0:
+        #    print("Perry")
+        lock.release()
 def main():
     # TODO: Something is missing here (needed to print i)
     print(i)
